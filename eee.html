@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Python Básico - Programando con Leonel Lugo Mendoza</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3 {
+            color: #092bc7;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .col {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #092bc7;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            background-color: #fcb505;
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #d99d05;
+        }
+
+        /* Card Section */
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #092bc7;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Que vas a aprender Section */
+        .learning-card {
+            background-color: #f0f0f0;
+        }
+
+        .learning-card:nth-child(1) {
+            background-color: #bdff00;
+        }
+
+        .learning-card:nth-child(2) {
+            background-color: #fcb505;
+        }
+
+        /* Quién lo enseña Section */
+        .teacher-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .teacher-info img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+        }
+
+        .teacher-info div {
+            max-width: 70%;
+        }
+
+        /* Temario del curso */
+        .temario-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .temario-card h3 {
+            color: #092bc7;
+            font-size: 1.4rem;
+        }
+
+        /* FAQ Section */
+        .faq-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* Precio Section */
+        .price-card {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-card .text {
+            max-width: 70%;
+        }
+
+        .price-card .price {
+            font-size: 2rem;
+            color: #092bc7;
+        }
+
+        .price-card .advantages {
+            margin-top: 10px;
+        }
+
+        .price-card .advantages ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .price-card .advantages li {
+            display: flex;
+            align-items: center;
+        }
+
+        .price-card .advantages li:before {
+            content: "✔️";
+            margin-right: 10px;
+        }
+
+        .price-card button {
+            background-color: #fcb505;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .price-card button:hover {
+            background-color: #d99d05;
+        }
+
+        /* Contact Section */
+        .contact-button {
+            background-color: #fcb505;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .contact-button:hover {
+            background-color: #d99d05;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .price-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .teacher-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>¡Aprende Python Básico con Leonel Lugo! 🐍</h1>
+            <p>Domina la programación con Python desde cero 👨‍💻</p>
+            <a href="https://www.google.com" target="_blank" class="cta-button">¡Inscríbete ahora! 🚀</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <!-- Que vas a aprender -->
+        <div class="row">
+            <div class="col learning-card">
+                <div class="card">
+                    <h3>Fundamentos de Python</h3>
+                    <p>Aprende las bases de Python: sintaxis, variables, tipos de datos y estructuras de control.</p>
+                </div>
+            </div>
+            <div class="col learning-card">
+                <div class="card">
+                    <h3>Funciones y módulos</h3>
+                    <p>Descubre cómo crear funciones y trabajar con módulos para hacer tu código más limpio y eficiente.</p>
+                </div>
+            </div>
+            <div class="col learning-card">
+                <div class="card">
+                    <h3>Trabajando con archivos</h3>
+                    <p>Aprende a leer y escribir archivos para manejar datos en tus aplicaciones de forma efectiva.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quién lo enseña -->
+        <div class="row">
+            <div class="col">
+                <div class="teacher-info">
+                    <img src="teacher.jpg" alt="Profesor Leonel Lugo">
+                    <div>
+                        <h2>¿Quién lo enseña?</h2>
+                        <p>Leonel Lugo es un experto programador con más de 10 años de experiencia enseñando Python. ¡Aprende de un profesional con amplia trayectoria!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Temario del curso -->
+        <div class="row">
+            <div class="col">
+                <h2>Temario del curso</h2>
+                <div class="card temario-card">
+                    <h3>Bloque 1: Introducción a Python</h3>
+                    <p>Tu primer paso en Python: sintaxis, variables y estructuras de control.</p>
+                </div>
+                <div class="card temario-card">
+                    <h3>Bloque 2: Estructuras de Control</h3>
+                    <p>Condicionales, bucles y más para escribir código eficiente y claro.</p>
+                </div>
+                <div class="card temario-card">
+                    <h3>Bloque 3: Funciones y Módulos</h3>
+                    <p>Organiza tu código con funciones y módulos reutilizables.</p>
+                </div>
+                <div class="card temario-card">
+                    <h3>Bloque 4: Archivos</h3>
+                    <p>Aprende a manejar archivos para guardar y cargar datos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preguntas frecuentes -->
+        <div class="row">
+            <div class="col">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="card faq-card">
+                    <h3>¿Cuánto tiempo dura el curso?</h3>
+                    <p>Este curso tiene una duración de 6 semanas, con acceso a materiales y soporte en tiempo real.</p>
+                </div>
+                <div class="card faq-card">
+                    <h3>¿Necesito experiencia previa?</h3>
+                    <p>No, este curso está diseñado para principiantes, no necesitas experiencia previa en programación.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Precio -->
+        <div class="row">
+            <div class="col">
+                <h2>Precio</h2>
+                <div class="card price-card">
+                    <div class="text">
+                        <p>¡No pierdas esta oportunidad de aprender Python! Este curso está disponible por solo $50,000.</p>
+                    </div>
+                    <div class="price">
+                        <h2>$50,000</h2>
+                        <div class="advantages">
+                            <ul>
+                                <li>✔️ Acceso de por vida al contenido del curso</li>
+                                <li>✔️ Soporte 24/7</li>
+                                <li>✔️ Proyectos prácticos para que pongas en práctica lo aprendido</
+
+                                    
